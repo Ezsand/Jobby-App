@@ -1,100 +1,72 @@
-.nav-container {
-  background-color: #272727;
-  padding: 10px;
-}
-
-.header-ul-container {
+.header-container {
   display: flex;
-  flex-direction: row;
   justify-content: space-between;
-  list-style: none;
+  align-items: center;
+  background-color: #272727;
+  padding: 10px 30px;
+  padding-top: 20px;
+  list-style-type: none;
 }
 
-.logo-container {
-  margin-left: 10px;
-}
-
-.home-jobs-container {
-  list-style: none;
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  width: 20%;
-}
-
-.nav-text {
-  color: #ffffff;
-  font-weight: bold;
-  font-family: 'Roboto';
-  font-size: 23px;
-}
-
-.btn-logout {
-  color: #ffffff;
-  background-color: #4f46e5;
-  border: 0;
-  border-radius: 5px;
-  padding: 5px;
-  margin-left: 10px;
-  margin-right: 10px;
-  margin-top: 10px;
-  font-weight: bold;
-  font-size: 15px;
+.header-logo {
+  height: 30px;
   width: 100px;
-  height: 40px;
-  cursor: pointer;
 }
 
-.link {
+.pages {
+  display: flex;
+}
+
+.page-links {
   text-decoration: none;
 }
 
-.home-icon {
+.page-name {
   color: #ffffff;
-  font-size: 200%;
+  font-family: 'Roboto';
+  margin-right: 10px;
 }
 
-@media screen and (min-width: 768px) {
-  .home-icon {
-    display: none;
-  }
-
-  .home-jobs-btn {
-    display: none;
-  }
+.logout-btn {
+  background-color: #4f46e5;
+  color: white;
+  font-size: 12px;
+  outline: none;
+  border: none;
+  padding: 7px 15px;
+  border-radius: 4px;
 }
 
-@media screen and (max-width: 767px) {
-  .nav-text {
+.mobile-navbar {
+  display: none;
+}
+
+.nav-bar-image {
+  width: 50px;
+  margin-left: 40px;
+}
+
+.nav-mobile-btn {
+  border: none;
+  outline: none;
+  background-color: transparent;
+}
+
+@media screen and (max-width: 768px) {
+  .header-container {
     display: none;
   }
 
-  .btn-logout {
-    display: none;
+  .mobile-navbar {
+    background-color: #272727;
+    display: flex;
+    padding: 15px;
+    justify-content: space-between;
+    align-items: center;
   }
 
-  .logo {
-    width: 100%;
-    height: 100%;
-  }
-
-  .logo-container {
-    width: 20%;
-  }
-
-  .home-jobs-container {
-    width: 40%;
-  }
-
-  .home-jobs-btn {
-    color: #ffffff;
-    background-color: #4f46e5;
-    border: 0;
-    border-radius: 5px;
-    width: 120%;
-    height: 100%;
-    font-weight: bold;
-    cursor: pointer;
-    padding: 5px;
+  .mobile-header-logo {
+    height: 70px;
+    width: 140px;
   }
 }

@@ -1,59 +1,44 @@
 import {Link, withRouter} from 'react-router-dom'
-import {ImHome} from 'react-icons/im'
-import {FiLogOut} from 'react-icons/fi'
 import Cookies from 'js-cookie'
 import './index.css'
 
-const websiteLogo = 'https://assets.ccbp.in/frontend/react-js/logo-img.png'
-
 const Header = props => {
-  const onClickLogout = () => {
+  const onLogout = () => {
     const {history} = props
     Cookies.remove('jwt_token')
     history.replace('/login')
   }
+
   return (
-    <nav className="nav-container">
-      <ul className="header-ul-container">
-        <div>
-          <li className="logo-container">
-            <Link className="link" to="/">
-              <img className="logo" src={websiteLogo} alt="website logo" />
-            </Link>
-          </li>
-        </div>
-        <div>
-          <li className="home-jobs-container">
-            <Link className="link" to="/">
-              <ImHome className="home-icon" />
-              <h1 className="nav-text">Home</h1>
-            </Link>
-          </li>
-        </div>
-        <div>
+    <>
+      <ul className="header-container">
+        <Link to="/" className="page-link">
           <li>
-            <Link className="link" to="/jobs">
-              <h1 className="nav-text">Jobs</h1>
-              <button type="button" className="home-jobs-btn">
-                Jobs
-              </button>
-            </Link>
+            <img
+              src="https://assets.ccbp.in/frontend/react-js/logo-img.png"
+              alt="website logo"
+              className="header-logo"
+            />
           </li>
+        </Link>
+
+        <div className="pages">
+          <Link to="/" className="page-links">
+            <li>
+              <p className="page-name">Home</p>
+            </li>
+          </Link>
+          <Link to="/jobs" className="page-links">
+            <li>
+              <p className="page-name">Jobs</p>
+            </li>
+          </Link>
         </div>
-        <div>
-          <li>
-            <FiLogOut className="home-icon" onClick={onClickLogout} />
-            <button
-              type="button"
-              className="btn-logout"
-              onClick={onClickLogout}
-            >
-              Logout
-            </button>
-          </li>
-        </div>
+        <button type="button" className="logout-btn" onClick={onLogout}>
+          Logout
+        </button>
       </ul>
-    </nav>
+    </>
   )
 }
 
